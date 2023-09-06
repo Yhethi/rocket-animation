@@ -1,0 +1,341 @@
+body {
+  background: rgb(0, 0, 0);
+}
+
+.contenedor {
+  width: 100vw;
+  background: rgb(0, 0, 50);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.campo {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(10vh);
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor__cohete {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: subir 10s linear;
+  transition-duration: 2s;
+  transform: scale(0.8);
+  /* overflow: hidden; */
+  /* background: red; */
+}
+
+.contenedor__cohete__arrived {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: subir2 20s linear;
+  transition-duration: 2s;
+  transform: scale(0.8);
+}
+
+.contenedor__cohete__arrived__done {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: subir3 10s linear infinite;
+  transition-duration: 2s;
+  transform: scale(0.8);
+}
+
+#cohete {
+  width: 150px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+#llamas {
+  position: absolute;
+  object-fit: contain;
+  transform: rotate(180deg) translateY(-120px);
+  width: 150px;
+  animation: llamas 1s linear infinite;
+}
+
+@keyframes llamas {
+  0% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+    filter: brightness(1);
+  }
+  10% {
+    transform: rotate(180deg) translateY(-120px) rotatey(10deg);
+    filter: brightness(0.96);
+  }
+  20% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+    filter: brightness(1);
+  }
+  30% {
+    transform: rotate(180deg) translateY(-120px) rotatey(10deg);
+    filter: brightness(0.96);
+  }
+  40% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+    filter: brightness(1);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-120px) rotatey(10deg);
+    filter: brightness(0.96);
+  }
+  60% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+    filter: brightness(1);
+  }
+  70% {
+    transform: rotate(180deg) translateY(-120px) rotatey(10deg);
+    filter: brightness(0.96);
+  }
+  80% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+    filter: brightness(1);
+  }
+  90% {
+    transform: rotate(180deg) translateY(-120px) rotatey(10deg);
+    filter: brightness(0.96);
+  }
+  100% {
+    transform: rotate(180deg) translateY(-120px) rotatey(20deg);
+  }
+}
+
+#fondoSpace {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#fondoSpace__winner {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: resplandecer 0.5s linear infinite;
+}
+@keyframes resplandecer {
+  0%,
+  100% {
+    filter: brightness(1.1);
+  }
+  50% {
+    filter: brightness(1);
+  }
+}
+#porcentaje {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  color: white;
+}
+
+.inputChange {
+  position: absolute;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* background: red; */
+  align-items: end;
+  right: 10vw;
+  z-index: 2;
+  top: 50vh;
+}
+.inputChange input {
+  width: 20%;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.inputChange h4 {
+  color: white;
+}
+#box__cohete {
+  cursor: pointer;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+#box__cohete:hover > #rocketCard {
+  width: 200px;
+  transform: scale(1) translateY(25%) translateX(76%);
+}
+#box__cohete h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 0px;
+  color: white;
+  font-size: 14px;
+}
+#box__cohete p {
+  line-height: 14px;
+}
+#rocketCard {
+  width: 0px;
+  height: 100px;
+  background: rgb(0, 96, 152);
+  position: absolute;
+  transition-duration: 0.1s;
+  transform: scale(0) translateY(0%);
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#rocketCard p {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+}
+
+#rocketCard::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 500px;
+  background: white;
+  top: -200px;
+  left: 90px;
+  animation: stickRotate 10s linear infinite;
+  z-index: -1;
+}
+
+#rocketCard::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 0, 181, 1) 0%,
+    rgba(0, 133, 159, 1) 100%
+  );
+  z-index: -1;
+}
+
+/* RocketCard2 */
+
+#box__cohete:hover > #rocketCard2 {
+  width: 200px;
+  transform: scale(1) translateY(25%) translateX(76%) rotate(-45deg);
+}
+#rocketCard2 {
+  width: 0px;
+  height: 100px;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 0, 181, 1) 0%,
+    rgba(0, 133, 159, 1) 100%
+  );
+  position: absolute;
+  transition-duration: 0.1s;
+  transform: scale(0) translateY(0%);
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#rocketCard2 p {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+#rocketCard2::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 500px;
+  background: white;
+  top: -200px;
+  left: 90px;
+  animation: stickRotate 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes stickRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#rocketCard2::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 0, 181, 1) 0%,
+    rgba(0, 133, 159, 1) 100%
+  );
+  z-index: -1;
+}
+.estrella {
+  overflow: hidden;
+  mix-blend-mode: exclusion;
+  width: 220px;
+  height: 170px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: fugaz1 4s linear infinite;
+}
+@keyframes fugaz1 {
+  0% {
+    transform: scale(100%) scaleX(100%) rotateY(180deg) translateY(-100px)
+      translateX(100px);
+    filter: opacity(0.1);
+  }
+  25% {
+    transform: scale(200%) scaleX(200%) rotateY(180deg) translateY(-100px)
+      translateX(100px);
+    filter: opacity(0.95);
+  }
+  50% {
+    transform: scale(80%) scaleX(250%) rotateY(180deg) translateY(50px)
+      translateX(-100px);
+    filter: opacity(0.95);
+  }
+
+  60% {
+    transform: scale(80%) scaleX(250%) rotateY(180deg) translateY(50px)
+      translateX(-100px);
+    filter: opacity(0);
+  }
+  100% {
+    transform: scale(80%) scaleX(250%) rotateY(180deg) translateY(50px)
+      translateX(-100px);
+    filter: opacity(0);
+  }
+}
+#estrellaFugaz {
+  position: absolute;
+  top: 0;
+  /* z-index: 1; */
+  left: 0;
+  mix-blend-mode: exclusion;
+  object-fit: contain;
+  height: 200px;
+}
